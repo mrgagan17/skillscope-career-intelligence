@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#020617] text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white overflow-x-hidden;
+  }
+}
+
+/* Premium Glassmorphism Design Tokens */
+.glass-panel {
+  @apply bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 shadow-2xl shadow-black/40 rounded-2xl;
+}
+
+.glass-card {
+  @apply bg-slate-900/40 backdrop-blur-md border border-slate-800/50 hover:border-slate-700/80 transition-all duration-300 rounded-2xl shadow-lg hover:shadow-brand-500/5 hover:-translate-y-0.5;
+}
+
+.glass-input {
+  @apply bg-slate-950/60 border border-slate-800/80 focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30 text-slate-100 placeholder-slate-500 rounded-xl transition-all duration-200 outline-none;
+}
+
+.text-gradient-primary {
+  @apply bg-gradient-to-r from-brand-400 via-teal-400 to-indigo-400 bg-clip-text text-transparent font-bold;
+}
+
+.text-gradient-accent {
+  @apply bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent font-bold;
+}
+
+.glow-btn-primary {
+  @apply bg-gradient-to-r from-brand-600 to-teal-600 hover:from-brand-500 hover:to-teal-500 text-white font-medium shadow-lg shadow-brand-500/10 hover:shadow-brand-500/25 transition-all duration-200 active:scale-[0.98] rounded-xl;
+}
+
+/* Custom premium scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-950;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-800 rounded-full hover:bg-slate-700 transition-colors;
+  background-color: #1e293b;
+}
+
+/* Page transit animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Grid layout patterns */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240, 1fr));
+  gap: 1.5rem;
+}
